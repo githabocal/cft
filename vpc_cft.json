@@ -231,6 +231,84 @@
                 "SubnetId" : { "Ref" : "PrivateSubnet2" },
                 "RouteTableId" : { "Ref" : "PrivateRouteTable" }
             }
-        } 
+        },
+        "ALBASG": {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription" : "Wordpress-ALB",
+                "GroupName" : "LoadBalancer-SG",
+                "VpcId" : {"Ref": "VPC"},
+                "SecurityGroupIngress" : [
+                    {
+                        "CidrIp" : "0.0.0.0/0",
+                        "FromPort" : 80,
+                        "IpProtocol" : "tcp",
+                        "ToPort" : 80
+                    },
+                    {
+                        "CidrIp" : "0.0.0.0/0",
+                        "FromPort" : 443,
+                        "IpProtocol" : "tcp",
+                        "ToPort" : 443 
+                    }
+                ],
+                "Tags" : [
+                    {
+                        "Key": "Name",
+                        "Value": "LoadBalancer-SG"
+                    }
+                ]
+            }
+        },
+        "BastionHostSG": {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription" : "Wordpress-Bastion-SG",
+                "GroupName" : "Bastion-SG",
+                "VpcId" : {"Ref": "VPC"},
+                "SecurityGroupIngress" : [
+                    {
+                        "CidrIp" : "0.0.0.0/0",
+                        "FromPort" : 22,
+                        "IpProtocol" : "tcp",
+                        "ToPort" : 22
+                    }
+                ],
+                "Tags" : [
+                    {
+                        "Key": "Name",
+                        "Value": "BastionHost-SG"
+                    }
+                ]
+            }
+        },
+        "AppServerSG": {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription" : "AppLayer-SG",
+                "GroupName" : "Wordpress-SG",
+                "VpcId" : {"Ref": "VPC"},
+                "SecurityGroupIngress" : [
+                    {
+                        "CidrIp" : {"Ref": "BastionHostSG"},
+                        "FromPort" : 22,
+                        "IpProtocol" : "tcp",
+                        "ToPort" : 22
+                    },
+                    {
+                        "CidrIp" : {"Ref": "ALBASG"},
+                        "FromPort" : 80,
+                        "IpProtocol" : "tcp",
+                        "ToPort" : 80 
+                    }
+                ],
+                "Tags" : [
+                    {
+                        "Key": "Name",
+                        "Value": "AppLayer-SG"
+                    }
+                ]
+            }
+        }
     }
 }
