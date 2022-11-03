@@ -169,13 +169,9 @@
         "NATGatewayPublicSubnet2" : {
             "Type" : "AWS::EC2::NatGateway",
             "Properties" : {
-                "AllocationId" : { 
-                   "Fn::GetAtt" : ["NATGatewayElasticIP", "AllocationId"] 
-               },
+                "AllocationId" : { "Fn::GetAtt" : ["NATGatewayElasticIP", "AllocationId"] },
                 "ConnectivityType": "public",
-                "SubnetId" : { 
-                   "Ref" : "PublicSubnet2" 
-               },
+                "SubnetId" : {"Ref" : "PublicSubnet2"},
                 "Tags" : [ 
                    {
                         "Key" : "Name", 
@@ -213,9 +209,9 @@
             "Type" : "AWS::EC2::Route",
             "DependsOn" : "AttachGateway",
             "Properties" : {
-                "NatGatewayId" : { "Ref" : "PrivateRouteTable" },
+                "RouteTableId" : { "Ref" : "PrivateRouteTable" },
                 "DestinationCidrBlock" : "0.0.0.0/0",
-                "GatewayId" : { "Ref" : "NATGatewayPublicSubnet2" }
+                "NatGatewayId" : { "Ref" : "NATGatewayPublicSubnet2" }
             }
         },
         "AppLayer1PrivateSubnetAssociation" : {
@@ -557,7 +553,6 @@
                 "RuleAction" : "allow",
                 "RuleNumber" : 130
             }
-        },
-
+        }
     }
 }
