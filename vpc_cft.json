@@ -656,7 +656,7 @@
                 "MinSize" : "2",
                 "Tags" : [ 
                     {
-                        "PropgateAtLaunch": true,
+                        "PropagateAtLaunch": true,
                         "Key": "Name",
                         "Value": "ASG-wordpress"
                     }
