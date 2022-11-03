@@ -782,3 +782,6 @@ The steps that needs to be followed to create a stack for the diagram above.
             }
         }
 ```
+
+![Screen Shot 2022-11-03 at 6 31 14 PM](https://user-images.githubusercontent.com/86754468/199846805-fb677dc5-d050-4888-a817-f1deb3e70bae.png)
+
