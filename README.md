@@ -3,9 +3,9 @@
 AWS Cloud Formation template is **a declaration of the AWS resources that make up a stack**. **Resources** section the required section in the template.
 
 The steps that needs to be followed to create a stack for the diagram above.
-- Creating VPC
-- Creating Subnets
-- Creating Internet Gateway
+- <a href="https://github.com/githabocal/cft#creating-vpc" target="_blank">*VPC*</a>
+- <a href="https://github.com/githabocal/cft#creating-subnets" target="_blank">*Creating Subnets*</a>
+- <a href="https://github.com/githabocal/cft#creating-internet-gateway" target="_blank">*Creating Internet Gateway*</a>
 - Creating Route Tables
 - Creating NatGateway
 - Creating Elastic IP
