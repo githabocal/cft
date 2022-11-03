@@ -7,6 +7,7 @@ on:
   pull_request:
        
 
+
 jobs:
   cft-actions:
     name: vpc-cft-deploy
@@ -40,4 +41,4 @@ jobs:
     #   run:  aws cloudformation delete-stack --stack-name vpc-stack
 
     - name: Deploy CFT to aws in us-east-1
-      run: aws cloudformation deploy --template-file vpc_cft.json --stack-name vpc-wordpress --parameter-overrides KeyName=bastion
+      run: aws cloudformation deploy --template-file vpc_cft.json --stack-name vpc-wordpress --parameter-overrides WebServerKey=bastion
