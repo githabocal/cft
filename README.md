@@ -2,6 +2,8 @@
 
 AWS Cloud Formation template is **a declaration of the AWS resources that make up a stack**. **Resources** section the required section in the template.
 
+<img width="694" alt="Screen Shot 2022-11-03 at 2 29 32 PM" src="https://user-images.githubusercontent.com/86754468/199842528-66ddac3e-6140-4092-80c6-8146a5074a33.png">
+
 The steps that needs to be followed to create a stack for the diagram above.
 - <a href="https://github.com/githabocal/cft#creating-vpc" target="_blank">*VPC*</a>
 - <a href="https://github.com/githabocal/cft#creating-subnets" target="_blank">*Creating Subnets*</a>
