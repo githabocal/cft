@@ -6,16 +6,16 @@ The steps that needs to be followed to create a stack for the diagram above.
 - <a href="https://github.com/githabocal/cft#creating-vpc" target="_blank">*VPC*</a>
 - <a href="https://github.com/githabocal/cft#creating-subnets" target="_blank">*Creating Subnets*</a>
 - <a href="https://github.com/githabocal/cft#creating-internet-gateway" target="_blank">*Creating Internet Gateway*</a>
-- Creating Route Tables
-- Creating NatGateway
-- Creating Elastic IP
-- Creating Security Group
-- Creating NACL
-- Creating Load Balancer
-- Creating Target Group
-- Launch Configuration
-- Creating Auto Scaling Group
-- Creating Instance
+- <a href="https://github.com/githabocal/cft#creating-route-tables" target="_blank">*Creating Route Tables*</a>
+- <a href="https://github.com/githabocal/cft#creating-natgateway" target="_blank">*Creating NatGateway*</a>
+- <a href="https://github.com/githabocal/cft#creating-elastic-ip" target="_blank">*Creating Elastic IP*</a>
+- <a href="https://github.com/githabocal/cft#creating-security-group" target="_blank">*Creating Security Group*</a>
+- <a href="https://github.com/githabocal/cft#creating-nacl" target="_blank">*Creating NACL*</a>
+- <a href="https://github.com/githabocal/cft#creating-load-balancer" target="_blank">*Creating Load Balancer*</a>
+- <a href="https://github.com/githabocal/cft#creating-target-group" target="_blank">*Creating Target Group*</a>
+- <a href="https://github.com/githabocal/cft#launch-configuration" target="_blank">*Launch Configuration*</a>
+- <a href="https://github.com/githabocal/cft#creating-auto-scaling-group" target="_blank">*Creating Auto Scaling Group*</a>
+- <a href="https://github.com/githabocal/cft#creating-instance" target="_blank">*Creating Instance*</a>
 
 # <h3>Creating VPC:
 ```
